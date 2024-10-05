@@ -1,0 +1,27 @@
+/*Styles Videoclub*/
+
+#gestorVideoclub .text-align-center-videoclub{
+    text-align: center;
+}
+
+#gestorVideoclub .margin-button-top-langs{
+    margin-top: 30px;
+}
+
+#gestorVideoclub .button-langs{
+    width: 100px;
+}
+
+#gestorVideoclub .margin-button-right-langs{
+    margin-right: 15px;
+}
+
+#gestorVideoclub .image-flags{
+    width: 40px;
+}
+
+#gestorVideoclub .active-btn-lang{
+    color: var(--bs-btn-hover-color);
+    background-color: var(--bs-btn-hover-bg);
+    border-color: var(--bs-btn-hover-border-color);
+}

@@ -1,5 +1,7 @@
 {
     "videoclub.main.language.spanish": "Spanish",
     "videoclub.main.language.english": "English",
-    "videoclub.main.title": "Video Store Management"
+    "videoclub.main.title": "Video Store Management",
+    "videoclub.main.option.users": "Users Management",
+    "videoclub.main.option.films": "Films Management"
 }

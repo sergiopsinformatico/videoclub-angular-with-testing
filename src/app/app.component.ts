@@ -9,7 +9,8 @@ import { TranslateVideoclubService } from './translate-videoclub.service';
 })
 export class AppComponent {
 
-  langChosen: string;
+  langChosen: string = '';
+  optionChosen: string = '';
 
   constructor(protected translate: TranslateService,
               protected configTranslateVideoclub: TranslateVideoclubService
@@ -20,6 +21,10 @@ export class AppComponent {
   changeLanguage(lang: string){
     this.langChosen = lang;
     this.configTranslateVideoclub.changeLanguage(lang);
+  }
+
+  openOption(option: string){
+    this.optionChosen = option;
   }
   
 }

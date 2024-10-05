@@ -1,0 +1,26 @@
+{
+    "listFilms": 
+    [
+        {
+            "title": "Harry Potter y la Piedra Filosofal",
+            "year": "2001",
+            "director": "Chris Columbus",
+            "actors": "Daniel Radcliffe, Rupert Grint, Emma Watson, Richard Harris, Maggie Smith, Alan Rickman, Robbie Coltrane", 
+            "isRent": true
+        },
+        {
+            "title": "Titanic",
+            "year": "1997",
+            "director": "James Cameron",
+            "actors": "Leonardo Dicaprio, Kate Winslet, Billy Zane, Katy Bates, Frances Fisher, Gloria Stuart, Bill Paxton", 
+            "isRent": false
+        },
+        {
+            "title": "El Señor de Los Anillos",
+            "year": "2001",
+            "director": "Peter Jackson",
+            "actors": "Elijah Wood, Ian McKellen, Viggo Mortensen, Sean Astin, Sean Bean, Christopher Lee, Andy Serkis", 
+            "isRent": true
+        }
+    ]
+}

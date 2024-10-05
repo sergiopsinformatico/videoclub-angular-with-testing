@@ -20,8 +20,17 @@
     width: 40px;
 }
 
-#gestorVideoclub .active-btn-lang{
+#gestorVideoclub .active-btn-option{
     color: var(--bs-btn-hover-color);
     background-color: var(--bs-btn-hover-bg);
     border-color: var(--bs-btn-hover-border-color);
+}
+
+#gestorVideoclub .button-options{
+    width: 300px;
+    height: 200px;
+}
+
+#gestorVideoclub .style-icons-option{
+    font-size: 50px;;
 }

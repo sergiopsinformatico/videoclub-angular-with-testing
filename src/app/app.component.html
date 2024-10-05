@@ -8,14 +8,14 @@
                         <div class="col-md-12">
                             <div class="text-align-center-videoclub margin-button-top-langs">
                                 <button id="btn-es" type="button" class="btn btn-outline-primary button-langs margin-button-right-langs" 
-                                        [ngClass]=" ('es-ES' == langChosen) ? 'active-btn-lang' : ''" (click)="changeLanguage('es-ES')">
+                                        [ngClass]=" ('es-ES' == langChosen) ? 'active-btn-option' : ''" (click)="changeLanguage('es-ES')">
 
                                         <img class="image-flags" src="../assets/images/spanish-flag.png" alt="MDN">
                                         {{ 'videoclub.main.language.spanish' | translate }}
 
                                 </button>
                                 <button id="btn-en" type="button" class="btn btn-outline-danger button-langs" 
-                                        [ngClass]=" ('en-US' == langChosen) ? 'active-btn-lang' : ''" (click)="changeLanguage('en-US')">
+                                        [ngClass]=" ('en-US' == langChosen) ? 'active-btn-option' : ''" (click)="changeLanguage('en-US')">
 
                                         <img class="image-flags" src="../assets/images/british-flag.png" alt="MDN">
                                         {{ 'videoclub.main.language.english' | translate }}
@@ -26,8 +26,33 @@
                             <div class="text-align-center-videoclub">
                                 <h1>{{ 'videoclub.main.title' | translate }}</h1>
                             </div>
-                            <br>
                         </div>
+                    </div>
+                    <br>
+                    <div class="row">
+                        <div class="col-md-4">
+                            <div class="text-align-center-videoclub">
+                                <button id="btn-users" type="button" class="btn btn-outline-success button-options" 
+                                        [ngClass]=" ('users' == optionChosen) ? 'active-btn-option' : ''" (click)="openOption('users')">
+
+                                        <i class="fa fa-user style-icons-option" aria-hidden="true"></i><br><br>
+                                        {{ 'videoclub.main.option.users' | translate }}
+
+                                </button>
+                            </div>
+                            <br><br>
+                            <div class="text-align-center-videoclub">
+                                <button id="btn-films" type="button" class="btn btn-outline-warning button-options" 
+                                        [ngClass]=" ('films' == optionChosen) ? 'active-btn-option' : ''" (click)="openOption('films')">
+
+                                        <i class="fa fa-film style-icons-option" aria-hidden="true"></i><br><br>
+                                        {{ 'videoclub.main.option.films' | translate }}
+
+                                </button>
+                            </div>
+                            <br><br>
+                        </div>
+                        <div class="col-md-8"></div>
                     </div>
                 </div>
                 <div class="col-md-1"></div>

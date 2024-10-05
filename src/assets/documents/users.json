@@ -1,0 +1,10 @@
+{
+    "listUsers": 
+    [
+        {
+            "name": "Luis Sanchez",
+            "birthdate": "19/02/1993",
+            "address": "Calle Travesia, 24, Toledo"
+        }
+    ]
+}

@@ -18,7 +18,9 @@
                             <th scope="col">{{'videoclub.users.idUser' | translate}}</th>
                             <th scope="col">{{'videoclub.users.nameUser' | translate}}</th>
                             <th scope="col">{{'videoclub.users.familyNameUser' | translate}}</th>
-                            <th scope="col">{{'videoclub.users.optionsUser' | translate}}</th>
+                            <th scope="col">{{'videoclub.users.viewUser' | translate}}</th>
+                            <th scope="col">{{'videoclub.users.editUser' | translate}}</th>
+                            <th scope="col">{{'videoclub.users.deleteUser' | translate}}</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -28,23 +30,13 @@
                                 <td>{{eUser.name}}</td>
                                 <td>{{eUser.familyName}}</td>
                                 <td>
-
-                                    <p-dropdown
-                                        [options]="eUser.listOptions"
-                                        placeholder="{{ eUser.placeholder }}"
-                                    >
-                                        <ng-template pTemplate="selectedItem">
-                                            <div>
-                                            <div>{{ eUser.name | translate }}</div>
-                                            </div>
-                                        </ng-template>
-                                        <ng-template let-option pTemplate="item">
-                                            <div>
-                                            <div>{{ option.name | translate }}</div>
-                                            </div>
-                                        </ng-template>
-                                    </p-dropdown>
-
+                                    <button type="button" class="btn btn-success">{{'videoclub.users.viewUser' | translate}}</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-warning">{{'videoclub.users.editUser' | translate}}</button>
+                                </td>
+                                <td>
+                                    <button type="button" class="btn btn-info">{{'videoclub.users.deleteUser' | translate}}</button>
                                 </td>
                             </tr>
                         </ng-container>

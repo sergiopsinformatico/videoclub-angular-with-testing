@@ -3,5 +3,15 @@
     "videoclub.main.language.english": "English",
     "videoclub.main.title": "Video Store Management",
     "videoclub.main.option.users": "Users Management",
-    "videoclub.main.option.films": "Films Management"
+    "videoclub.main.option.films": "Films Management",
+    "videoclub.users.newUser": "New User",
+    "videoclub.users.viewUser": "View User",
+    "videoclub.users.editUser": "Edit User",
+    "videoclub.users.deleteUser": "Delete User",
+    "videoclub.users.idUser": "Number",
+    "videoclub.users.nameUser": "Name",
+    "videoclub.users.familyNameUser": "Family Name",
+    "videoclub.users.optionsUser": "Options",
+    "videoclub.users.selectOptionsUser": "Select Option...",
+    "videoclub.users.listEmpty": "There isn't users charged"
 }

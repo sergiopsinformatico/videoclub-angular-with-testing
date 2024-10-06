@@ -1,0 +1,57 @@
+<div id="usersManagement" class="row">
+    <div class="col-md-12">
+        <div class="row">
+            <div class="col-md-12 text-align-center-videoclub">
+                <button type="button" class="btn btn-primary btn-new-user">
+                    <i class="fa fa-user-plus icon-margin-right-btn" aria-hidden="true"></i>{{'videoclub.users.newUser' | translate}}
+                </button>
+            </div>
+        </div>
+        <br>
+        <div class="row">
+            <div class="col-md-1"></div>
+            <div class="col-md-10 text-align-center-videoclub">
+                <p *ngIf="listUsers.length == 0"></p>
+                <table class="table" *ngIf="listUsers.length > 0">
+                    <thead>
+                        <tr>
+                            <th scope="col">{{'videoclub.users.idUser' | translate}}</th>
+                            <th scope="col">{{'videoclub.users.nameUser' | translate}}</th>
+                            <th scope="col">{{'videoclub.users.familyNameUser' | translate}}</th>
+                            <th scope="col">{{'videoclub.users.optionsUser' | translate}}</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <ng-container *ngFor="let eUser of listUsers">
+                            <tr>
+                                <th scope="row">{{eUser.id}}</th>
+                                <td>{{eUser.name}}</td>
+                                <td>{{eUser.familyName}}</td>
+                                <td>
+
+                                    <p-dropdown
+                                        [options]="eUser.listOptions"
+                                        placeholder="{{ eUser.placeholder }}"
+                                    >
+                                        <ng-template pTemplate="selectedItem">
+                                            <div>
+                                            <div>{{ eUser.name | translate }}</div>
+                                            </div>
+                                        </ng-template>
+                                        <ng-template let-option pTemplate="item">
+                                            <div>
+                                            <div>{{ option.name | translate }}</div>
+                                            </div>
+                                        </ng-template>
+                                    </p-dropdown>
+
+                                </td>
+                            </tr>
+                        </ng-container>
+                    </tbody>
+                </table>
+            </div>
+            <div class="col-md-1"></div>
+        </div>
+    </div>
+</div>

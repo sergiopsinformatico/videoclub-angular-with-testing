@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { TranslateVideoclubService } from './translate-videoclub.service';
+import { TranslateVideoclubService } from './services/translate-videoclub.service';
 
 @Component({
   selector: 'app-root',

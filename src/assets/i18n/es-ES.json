@@ -3,5 +3,15 @@
     "videoclub.main.language.english": "Inglés",
     "videoclub.main.title": "Gestión de un Videoclub",
     "videoclub.main.option.users": "Gestión de Usuarios",
-    "videoclub.main.option.films": "Gestión de Películas"
+    "videoclub.main.option.films": "Gestión de Películas",
+    "videoclub.users.newUser": "Nuevo Usuario",
+    "videoclub.users.viewUser": "Ver Usuario",
+    "videoclub.users.editUser": "Editar Usuario",
+    "videoclub.users.deleteUser": "Eliminar Usuario",
+    "videoclub.users.idUser": "Numero",
+    "videoclub.users.nameUser": "Nombre",
+    "videoclub.users.familyNameUser": "Apellidos",
+    "videoclub.users.optionsUser": "Opciones",
+    "videoclub.users.selectOptionsUser": "Seleccionar Opciones...",
+    "videoclub.users.listEmpty": "No hay usuarios cargados"
 }

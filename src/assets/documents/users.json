@@ -2,9 +2,12 @@
     "listUsers": 
     [
         {
-            "name": "Luis Sanchez",
+            "id": "0001",
+            "name": "Luis",
+            "familyName": "Sanchez",
             "birthdate": "19/02/1993",
-            "address": "Calle Travesia, 24, Toledo"
+            "address": "Calle Travesia, 24, Toledo",
+            "phone": "11223344"
         }
     ]
 }

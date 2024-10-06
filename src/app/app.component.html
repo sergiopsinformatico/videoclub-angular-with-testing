@@ -52,7 +52,10 @@
                             </div>
                             <br><br>
                         </div>
-                        <div class="col-md-8"></div>
+                        <div class="col-md-8">
+                            <app-users-management *ngIf="'users' == optionChosen"></app-users-management>
+                            <app-films-management *ngIf="'films' == optionChosen"></app-films-management>
+                        </div>
                     </div>
                 </div>
                 <div class="col-md-1"></div>

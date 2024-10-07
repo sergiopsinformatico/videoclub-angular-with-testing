@@ -14,6 +14,12 @@
     "videoclub.users.selectOptionsUser": "Select Option...",
     "videoclub.users.listEmpty": "There isn't users charged",
     "videoclub.users.panelViewUser": "View User",
+    "videoclub.users.panelViewUser.id": "Id",
+    "videoclub.users.panelViewUser.name": "Name",
+    "videoclub.users.panelViewUser.nameFamily": "Family Name",
+    "videoclub.users.panelViewUser.birthdate": "Birthdate",
+    "videoclub.users.panelViewUser.address": "Address",
+    "videoclub.users.panelViewUser.closePanel": "Close Panel",
     "videoclub.users.panelEditUser": "Edit User",
     "videoclub.users.panelNewUser": "New User"
 }

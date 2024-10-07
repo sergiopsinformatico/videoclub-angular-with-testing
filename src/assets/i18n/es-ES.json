@@ -12,5 +12,8 @@
     "videoclub.users.nameUser": "Nombre",
     "videoclub.users.familyNameUser": "Apellidos",
     "videoclub.users.selectOptionsUser": "Seleccionar Opciones...",
-    "videoclub.users.listEmpty": "No hay usuarios cargados"
+    "videoclub.users.listEmpty": "No hay usuarios cargados",
+    "videoclub.users.panelViewUser": "Ver Usuario",
+    "videoclub.users.panelEditUser": "Editar Usuario",
+    "videoclub.users.panelNewUser": "Nuevo Usuario"
 }

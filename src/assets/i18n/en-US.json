@@ -12,5 +12,8 @@
     "videoclub.users.nameUser": "Name",
     "videoclub.users.familyNameUser": "Family Name",
     "videoclub.users.selectOptionsUser": "Select Option...",
-    "videoclub.users.listEmpty": "There isn't users charged"
+    "videoclub.users.listEmpty": "There isn't users charged",
+    "videoclub.users.panelViewUser": "View User",
+    "videoclub.users.panelEditUser": "Edit User",
+    "videoclub.users.panelNewUser": "New User"
 }

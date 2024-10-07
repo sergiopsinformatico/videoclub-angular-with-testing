@@ -26,17 +26,17 @@
                     <tbody>
                         <ng-container *ngFor="let eUser of listUsers">
                             <tr>
-                                <th scope="row">{{eUser.id}}</th>
-                                <td>{{eUser.name}}</td>
-                                <td>{{eUser.familyName}}</td>
+                                <th scope="row">{{eUser.getId()}}</th>
+                                <td>{{eUser.getName()}}</td>
+                                <td>{{eUser.getFamilyName()}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-success">{{'videoclub.users.viewUser' | translate}}</button>
+                                    <button type="button" class="btn btn-success" (click)="viewUser(eUser)">{{'videoclub.users.viewUser' | translate}}</button>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-warning">{{'videoclub.users.editUser' | translate}}</button>
+                                    <button type="button" class="btn btn-warning" (click)="editUser(eUser)">{{'videoclub.users.editUser' | translate}}</button>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-info">{{'videoclub.users.deleteUser' | translate}}</button>
+                                    <button type="button" class="btn btn-info" (click)="deleteUser(eUser)">{{'videoclub.users.deleteUser' | translate}}</button>
                                 </td>
                             </tr>
                         </ng-container>
@@ -46,4 +46,18 @@
             <div class="col-md-1"></div>
         </div>
     </div>
+    <p-dialog header="{{ 'videoclub.users.panelViewUser' | translate}}" [modal]="true" [(visible)]="showPanelViewUser" [style]="{ width: '25rem' }">
+        <span class="p-text-secondary block mb-5">Update your information.</span>
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">Username</label>
+            <input pInputText id="username" class="flex-auto" autocomplete="off" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-5">
+            <label for="email" class="font-semibold w-6rem">Email</label>
+            <input pInputText id="email" class="flex-auto" autocomplete="off" />
+        </div>
+        <div class="flex justify-content-end gap-2">
+            <p-button label="Cancel" severity="secondary" (onClick)="showPanelViewUser = false" />
+        </div>
+    </p-dialog>
 </div>

@@ -12,7 +12,8 @@ import { AppComponent } from './app.component';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { UsersManagementComponent } from './components/users-management/users-management.component';
 import { FilmsManagementComponent } from './components/films-management/films-management.component';
-import { DropdownModule } from 'primeng/dropdown';
+import { DialogModule } from 'primeng/dialog';
+import { ButtonModule } from 'primeng/button';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { DropdownModule } from 'primeng/dropdown';
     BrowserAnimationsModule,
     AppRoutingModule,
     HttpClientModule,
-    DropdownModule,
+    DialogModule,
+    ButtonModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

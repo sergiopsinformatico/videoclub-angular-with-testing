@@ -2,8 +2,9 @@
     <div class="col-md-12">
         <div class="row">
             <div class="col-md-12 text-align-center-videoclub">
-                <button type="button" class="btn btn-primary btn-new-user">
-                    <i class="fa fa-user-plus icon-margin-right-btn" aria-hidden="true"></i>{{'videoclub.users.newUser' | translate}}
+                <button type="button" class="btn btn-primary btn-new-user" (click)="createUser()">
+                    <i class="fa fa-user-plus icon-margin-right-btn" aria-hidden="true"></i>
+                    {{'videoclub.users.newUser' | translate}}
                 </button>
             </div>
         </div>
@@ -11,7 +12,9 @@
         <div class="row">
             <div class="col-md-1"></div>
             <div class="col-md-10 text-align-center-videoclub">
-                <p *ngIf="listUsers.length == 0"></p>
+                <p *ngIf="listUsers.length == 0">
+                    {{'videoblub.users.notExists' | translate }}
+                </p>
                 <table class="table" *ngIf="listUsers.length > 0">
                     <thead>
                         <tr>
@@ -46,6 +49,67 @@
             <div class="col-md-1"></div>
         </div>
     </div>
+
+    <!--Panel de Creacion-->
+
+    <p-dialog header="{{ 'videoclub.users.panelNewUser' | translate}}" [modal]="true" [(visible)]="showPanelNewUser" [style]="{ width: '25rem' }">
+        <!--<span class="p-text-secondary block mb-5">Update your information.</span>-->
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelNewUser.id' | translate}}:&nbsp;</label>
+            <input type="text" [(ngModel)]="objUserForPanel.id" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelNewUser.name' | translate}}:&nbsp;</label>
+            <input type="text" [(ngModel)]="objUserForPanel.name" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelNewUser.familyName' | translate}}:&nbsp;</label>
+            <input type="text" [(ngModel)]="objUserForPanel.familyName" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelNewUser.birthdate' | translate}}:&nbsp;</label>
+            <input type="text" [(ngModel)]="objUserForPanel.birthdate" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelNewUser.address' | translate}}:&nbsp;</label>
+            <input type="text" [(ngModel)]="objUserForPanel.address" />
+        </div>
+        <div class="flex align-items-center gap-2 align-btn-close-panel">
+            <p-button label="{{ 'videoclub.users.panelNewUser.saveUser' | translate}}" severity="secondary" (onClick)="savePatient()" />
+        </div>
+    </p-dialog>
+
+    <!--Panel de Edicion-->
+
+    <p-dialog header="{{ 'videoclub.users.panelEditUser' | translate}}" [modal]="true" [(visible)]="showPanelEditUser" [style]="{ width: '25rem' }">
+        <!--<span class="p-text-secondary block mb-5">Update your information.</span>-->
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelEditUser.id' | translate}}:&nbsp;</label>
+            <span>{{objUserForPanel.getId()}}</span>
+        </div>
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelEditUser.name' | translate}}:&nbsp;</label>
+            <input type="text" [(ngModel)]="objUserForPanel.name" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelEditUser.familyName' | translate}}:&nbsp;</label>
+            <input type="text" [(ngModel)]="objUserForPanel.familyName" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelEditUser.birthdate' | translate}}:&nbsp;</label>
+            <input type="text" [(ngModel)]="objUserForPanel.birthdate" />
+        </div>
+        <div class="flex align-items-center gap-3 mb-3">
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelEditUser.address' | translate}}:&nbsp;</label>
+            <input type="text" [(ngModel)]="objUserForPanel.address" />
+        </div>
+        <div class="flex align-items-center gap-2 align-btn-close-panel">
+            <p-button label="{{ 'videoclub.users.panelEditUser.saveChangeUser' | translate}}" severity="secondary" (onClick)="saveChanges()" />
+        </div>
+    </p-dialog>
+
+    <!--Panel de Vista-->
+
     <p-dialog header="{{ 'videoclub.users.panelViewUser' | translate}}" [modal]="true" [(visible)]="showPanelViewUser" [style]="{ width: '25rem' }">
         <!--<span class="p-text-secondary block mb-5">Update your information.</span>-->
         <div class="flex align-items-center gap-3 mb-3">
@@ -57,7 +121,7 @@
             <span>{{objUserForPanel.getName()}}</span>
         </div>
         <div class="flex align-items-center gap-3 mb-3">
-            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelViewUser.nameFamily' | translate}}:&nbsp;</label>
+            <label for="username" class="font-semibold w-6rem">{{ 'videoclub.users.panelViewUser.familyName' | translate}}:&nbsp;</label>
             <span>{{objUserForPanel.getFamilyName()}}</span>
         </div>
         <div class="flex align-items-center gap-3 mb-3">

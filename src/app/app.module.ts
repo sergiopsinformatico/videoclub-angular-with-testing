@@ -14,6 +14,7 @@ import { UsersManagementComponent } from './components/users-management/users-ma
 import { FilmsManagementComponent } from './components/films-management/films-management.component';
 import { DialogModule } from 'primeng/dialog';
 import { ButtonModule } from 'primeng/button';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { ButtonModule } from 'primeng/button';
     HttpClientModule,
     DialogModule,
     ButtonModule,
+    FormsModule,
     TranslateModule.forRoot({
       loader: {
         provide: TranslateLoader,

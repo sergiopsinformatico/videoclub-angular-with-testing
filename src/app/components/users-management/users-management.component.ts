@@ -13,6 +13,8 @@ export class UsersManagementComponent implements OnInit{
   listUsers: User[] = [];
 
   showPanelViewUser: boolean = false;
+  showPanelNewUser: boolean = false;
+  showPanelEditUser: boolean = false;
   objUserForPanel: User = new User(null);
 
   constructor(protected translate: TranslateService,
@@ -32,18 +34,44 @@ export class UsersManagementComponent implements OnInit{
     });
   }
 
+  //VISTA
+
   viewUser(user: User){
     this.objUserForPanel = user;
     this.showPanelViewUser = true;
   }
 
+  //ELIMINAR
+
   deleteUser(user: User){
     let indexFound = this.listUsers.findIndex(eUser => eUser && eUser.id && user && user.getId() && eUser.id == user.getId());
-    this.listUsers.splice(indexFound);
+    this.listUsers.splice(indexFound, 1);
   }
 
-  editUser(user: User){
+  //EDICION
 
+  editUser(user: User){
+    this.showPanelEditUser = true;
+    this.objUserForPanel = user;
+  }
+
+  saveChanges(){
+    this.showPanelEditUser = false;
+    let indexFound = this.listUsers.findIndex(eUser => eUser && eUser.id && this.objUserForPanel && this.objUserForPanel.getId() && eUser.id == this.objUserForPanel.getId());
+    this.listUsers.splice(indexFound, 1);
+    this.listUsers.push(this.objUserForPanel);
+  }
+
+  //CREACION
+
+  createUser(){
+    this.showPanelNewUser = true;
+    this.objUserForPanel = new User(null);
+  }
+
+  savePatient(){
+    this.showPanelNewUser = false
+    this.listUsers.push(this.objUserForPanel);
   }
 
 }

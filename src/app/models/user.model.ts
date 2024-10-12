@@ -1,10 +1,10 @@
 export class User {
 
-    id: string = '';
-    name: string = '';
-    familyName: string = '';
-    birthdate: string = '';
-    address: string = '';
+    id: any = '';
+    name: any = '';
+    familyName: any = '';
+    birthdate: any = '';
+    address: any = '';
     
     constructor(objJSON: any){
         if(objJSON != null){

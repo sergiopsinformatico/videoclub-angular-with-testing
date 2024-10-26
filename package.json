@@ -6,7 +6,8 @@
     "start": "ng serve",
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
-    "test": "ng test"
+    "test": "ng test",
+    "test-jasmine": "jasmine"
   },
   "private": true,
   "dependencies": {
@@ -24,6 +25,7 @@
     "@popperjs/core": "^2.11.6",
     "bootstrap": "^5.2.3",
     "font-awesome": "^4.7.0",
+    "jasmine": "^5.4.0",
     "primeng": "^16.9.1",
     "rxjs": "~7.8.0",
     "tslib": "^2.3.0",

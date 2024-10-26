@@ -34,5 +34,9 @@
     "videoclub.users.panelViewUser.familyName": "Apellidos",
     "videoclub.users.panelViewUser.birthdate": "Fecha de Nacimiento",
     "videoclub.users.panelViewUser.address": "Dirección",
-    "videoclub.users.panelViewUser.closePanel": "Cerrar Panel"
+    "videoclub.users.panelViewUser.closePanel": "Cerrar Panel",
+    "videoclub.users.panelDeleteUser": "Eliminar Usuario",
+    "videoclub.users.panelDeleteUser.messageDelete": "¿Quiere eliminar el usuario?",
+    "videoclub.users.panelDeleteUser.btnDelete": "Eliminar",
+    "videoclub.users.panelDeleteUser.btnCancel": "Cancelar"
 }

@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { TranslateService } from '@ngx-translate/core';
-import { HttpVideoclubService } from '../../services/http-videoclub.service';
 import { User } from 'src/app/models/user.model';
+import { UsersService } from 'src/app/services/users.service';
 
 @Component({
   selector: 'app-users-management',
@@ -15,51 +15,45 @@ export class UsersManagementComponent implements OnInit{
   showPanelViewUser: boolean = false;
   showPanelNewUser: boolean = false;
   showPanelEditUser: boolean = false;
+  showPanelDeleteUser: boolean = false;
   objUserForPanel: User = new User(null);
 
   constructor(protected translate: TranslateService,
-              protected httpVideoclub: HttpVideoclubService
+              protected usersService: UsersService
   ){}
 
   ngOnInit(): void {
-    this.loadListUsers();
-  }
-
-  loadListUsers(){
-    this.httpVideoclub.getFile('assets/documents/users.json').subscribe(objListUsers => {
-      let list: any = objListUsers;
-      list.listUsers.forEach((eUser: any) => {
-        this.listUsers.push(new User(eUser));
-      });
-    });
+    this.listUsers = this.usersService.listUsers;
   }
 
   //VISTA
 
-  viewUser(user: User){
+  openPanelViewUser(user: User){
     this.objUserForPanel = user;
     this.showPanelViewUser = true;
   }
 
   //ELIMINAR
 
-  deleteUser(user: User){
-    let indexFound = this.listUsers.findIndex(eUser => eUser && eUser.id && user && user.getId() && eUser.id == user.getId());
-    this.listUsers.splice(indexFound, 1);
+  openPanelDeleteUser(user: User){
+    this.showPanelDeleteUser = true;
+    this.objUserForPanel = user;
+  }
+
+  deleteUser(){
+    this.usersService.deleteUser(this.objUserForPanel);
   }
 
   //EDICION
 
-  editUser(user: User){
+  openPanelEditUser(user: User){
     this.showPanelEditUser = true;
     this.objUserForPanel = user;
   }
 
-  saveChanges(){
+  updateUser(){
     this.showPanelEditUser = false;
-    let indexFound = this.listUsers.findIndex(eUser => eUser && eUser.id && this.objUserForPanel && this.objUserForPanel.getId() && eUser.id == this.objUserForPanel.getId());
-    this.listUsers.splice(indexFound, 1);
-    this.listUsers.push(this.objUserForPanel);
+    this.usersService.updateUser(this.objUserForPanel);
   }
 
   //CREACION
@@ -71,7 +65,7 @@ export class UsersManagementComponent implements OnInit{
 
   savePatient(){
     this.showPanelNewUser = false
-    this.listUsers.push(this.objUserForPanel);
+    this.usersService.createUser(this.objUserForPanel);
   }
 
 }

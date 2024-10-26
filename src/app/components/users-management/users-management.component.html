@@ -33,13 +33,13 @@
                                 <td>{{eUser.getName()}}</td>
                                 <td>{{eUser.getFamilyName()}}</td>
                                 <td>
-                                    <button type="button" class="btn btn-success" (click)="viewUser(eUser)">{{'videoclub.users.viewUser' | translate}}</button>
+                                    <button type="button" class="btn btn-success" (click)="openPanelViewUser(eUser)">{{'videoclub.users.viewUser' | translate}}</button>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-warning" (click)="editUser(eUser)">{{'videoclub.users.editUser' | translate}}</button>
+                                    <button type="button" class="btn btn-warning" (click)="openPanelEditUser(eUser)">{{'videoclub.users.editUser' | translate}}</button>
                                 </td>
                                 <td>
-                                    <button type="button" class="btn btn-info" (click)="deleteUser(eUser)">{{'videoclub.users.deleteUser' | translate}}</button>
+                                    <button type="button" class="btn btn-info" (click)="openPanelDeleteUser(eUser)">{{'videoclub.users.deleteUser' | translate}}</button>
                                 </td>
                             </tr>
                         </ng-container>
@@ -104,7 +104,7 @@
             <input type="text" [(ngModel)]="objUserForPanel.address" />
         </div>
         <div class="flex align-items-center gap-2 align-btn-close-panel">
-            <p-button label="{{ 'videoclub.users.panelEditUser.saveChangeUser' | translate}}" severity="secondary" (onClick)="saveChanges()" />
+            <p-button label="{{ 'videoclub.users.panelEditUser.saveChangeUser' | translate}}" severity="secondary" (onClick)="updateUser()" />
         </div>
     </p-dialog>
 
@@ -134,6 +134,18 @@
         </div>
         <div class="flex align-items-center gap-2 align-btn-close-panel">
             <p-button label="{{ 'videoclub.users.panelViewUser.closePanel' | translate}}" severity="secondary" (onClick)="showPanelViewUser = false" />
+        </div>
+    </p-dialog>
+
+    <!--Panel de Eliminacion-->
+
+    <p-dialog header="{{ 'videoclub.users.panelDeleteUser' | translate}}" [modal]="true" [(visible)]="showPanelDeleteUser" [style]="{ width: '25rem' }">
+        <div class="flex align-items-center gap-3 mb-3">
+            <span>{{'videoclub.users.panelDeleteUser.messageDelete' | translate}}</span>
+        </div>
+        <div class="flex align-items-center gap-2 align-btn-close-panel">
+            <p-button label="{{ 'videoclub.users.panelDeleteUser.btnDelete' | translate}}" severity="primary" (onClick)="deleteUser()" />
+            <p-button label="{{ 'videoclub.users.panelDeleteUser.btnCancel' | translate}}" severity="secondary" (onClick)="showPanelDeleteUser = false" />
         </div>
     </p-dialog>
 </div>

@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { User } from "../models/user.model";
+import { LoggerService } from "./logger.service";
 
 
 @Injectable({
@@ -11,7 +12,7 @@ export class UsersService {
     listUsers: User[] = [];
     isListLoaded: boolean = false;
 
-    constructor(){
+    constructor(private loggerService: LoggerService){
         this.loadListUsers();
     }
 
@@ -19,18 +20,22 @@ export class UsersService {
         let indexFound = this.listUsers.findIndex(eUser => eUser && eUser.id && user && user.getId() && eUser.id == user.getId());
         this.listUsers.splice(indexFound, 1);
         this.listUsers.push(user);
+        this.loggerService.loggerUpdateMessage('Actualizado el recurso');
     }
 
     deleteUser(user: User){
         let indexFound = this.listUsers.findIndex(eUser => eUser && eUser.id && user && user.getId() && eUser.id == user.getId());
         this.listUsers.splice(indexFound, 1);
+        this.loggerService.loggerDeleteMessage('Eliminado el recurso');
     }
 
     createUser(user: User){
         this.listUsers.push(user);
+        this.loggerService.loggerInsertMessage('Insertado el recurso');
     }
 
     getUser(idUser: any): any{
+        this.loggerService.loggerReadMessage('Leido el recurso');
         return (this.listUsers.find(eUser => eUser && eUser.getId() && eUser.getId() === idUser)) ?
                (this.listUsers.find(eUser => eUser && eUser.getId() && eUser.getId() === idUser)) :
                (null);

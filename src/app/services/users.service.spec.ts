@@ -4,41 +4,41 @@ import { UsersService } from "./users.service";
 
 describe('UsersService', () => {
 
-    it('Test 01 User - Create user', () => {
+    let newUser: User;
 
-        const loggerService = new LoggerService();
-        spyOn(loggerService, 'loggerInsertMessage');
-
-        const userService = new UsersService(loggerService);
-
-        const newUser = new User({
+    beforeEach(() => {
+        newUser = new User({
             'id': 'prueba',
             'name': 'prueba',
             'familyName': 'prueba',
             'birthdate': 'fecha',
             'address': 'dir'
         });
+        console.log("-- Users: Load BeforeEach--");
+    });
+
+    it('Users -> Test 01: Create user', () => {
+
+        console.log("-- Users -> Test 01: Create user --");
+
+        const loggerService = new LoggerService();
+        spyOn(loggerService, 'loggerInsertMessage');
+
+        const userService = new UsersService(loggerService);
 
         userService.createUser(newUser);
         expect(userService.getUser(newUser.getId()).getId()).toBe(newUser.getId());
         expect(loggerService.loggerInsertMessage).toHaveBeenCalledTimes(1);
+        userService.deleteUser(newUser);
     });
 
-    it('Test 02 User - Delete user', () => {
+    it('Users -> Test 02: Delete user', () => {
 
-        const loggerService = new LoggerService();
-        spyOn(loggerService, 'loggerInsertMessage');
-        spyOn(loggerService, 'loggerDeleteMessage');
+        console.log("-- Users -> Test 02: Delete user --");
+
+        const loggerService = jasmine.createSpyObj('LoggerService', ["loggerInsertMessage", "loggerUpdateMessage", "loggerReadMessage", "loggerDeleteMessage"]);
 
         const userService = new UsersService(loggerService);
-
-        const newUser = new User({
-            'id': 'prueba',
-            'name': 'prueba',
-            'familyName': 'prueba',
-            'birthdate': 'fecha',
-            'address': 'dir'
-        });
 
         userService.createUser(newUser);
         userService.deleteUser(newUser);

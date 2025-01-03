@@ -1,5 +1,6 @@
 import { Injectable } from "@angular/core";
 import { Film } from "../models/film.model";
+import { LoggerService } from "./logger.service";
 
 
 @Injectable({
@@ -11,7 +12,7 @@ export class FilmsService{
     listFilms: any[] = [];
     isListLoaded: boolean = false;
 
-    constructor(){
+    constructor(private loggerService: LoggerService){
         this.loadListFilms();
     }
 
@@ -46,6 +47,24 @@ export class FilmsService{
             }));
             this.isListLoaded = true;
         }
+    }
+
+    createFilm(film: Film){
+        this.listFilms.push(film);
+        this.loggerService.loggerInsertMessage('Insertado el recurso');
+    }
+
+    deleteFilm(film: Film){
+        let indexFound = this.listFilms.findIndex(eFilm => eFilm && eFilm.id && film && film.getId() && eFilm.id == film.getId());
+        this.listFilms.splice(indexFound, 1);
+        this.loggerService.loggerDeleteMessage('Eliminado el recurso');
+    }
+
+    getFilm(idFilm: any): any{
+        this.loggerService.loggerReadMessage('Leido el recurso');
+        return (this.listFilms.find(eFilm => eFilm && eFilm.getId() && eFilm.getId() === idFilm)) ?
+               (this.listFilms.find(eFilm => eFilm && eFilm.getId() && eFilm.getId() === idFilm)) :
+               (null);
     }
 
 }
